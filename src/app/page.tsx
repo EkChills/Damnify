@@ -19,7 +19,7 @@ export default function Home() {
           <span className='border rounded-lg border-border p-1 text-[.75rem]  text-primary font-[500]'>Experiment</span>
         </Link>
         <div className='flex items-center gap-6'>
-          <LoginLink>
+          <LoginLink className="hidden sm:block">
             <span className={cn(buttonVariants({variant:'ghost', size:'sm'}))}>Sign in</span>
           </LoginLink>
           <RegisterLink className={cn(buttonVariants({size:'sm'}))}>Get started</RegisterLink>
