@@ -8,7 +8,7 @@ export async function POST(req:NextRequest) {
   console.log('triggered');
   
   const openai = new OpenAI({
-    apiKey: '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', // defaults to process.env["OPENAI_API_KEY"]
+    apiKey: process.env.OPENAI_API_KEY, // defaults to process.env["OPENAI_API_KEY"]
   });
   const {getUser} = getKindeServerSession()
   const user = getUser()
