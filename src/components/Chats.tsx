@@ -23,7 +23,7 @@ export default function Chats() {
   console.log(pathname);
   
   return (
-    <div className='flex flex-col overflow-y-scroll pb-4 scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100'>
+    <div className='flex flex-col overflow-y-scroll pb-4 scrollbar scrollbar-thumb-gray-900 scrollbar-none scrollbar-track-gray-100'>
       {isLoading ? <Loader2 className='animate-spin mt-6' /> : 
       data?.sort((a,b) => new Date(b.createdAt).getDate() - new Date(a.createdAt).getDate()).map((chat) => {
         console.log(chat.id);
