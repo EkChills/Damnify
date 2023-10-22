@@ -23,7 +23,7 @@ export default async function page() {
   if(!dbUser) redirect('/auth-callback?origin=chat')
   return (
     <MaxWidthWrapper className='w-full lg:w-[calc(100%-26.375rem)] ml-auto mr-[73px] p-0 pb-6 h-[calc(100vh-4rem)] py-4  '>
-      <div className='w-full h-full pb-24 lg:pb-0 bg-[#F4F5FC] rounded-3xl p-6 relative overflow-y-scroll'>
+      <div className='w-full h-full pb-24 lg:pb-0 bg-[#F4F5FC] rounded-3xl p-6 relative overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-900 scrollbar-track-gray-100'>
       <div className='bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] w-4 h-4 rounded-md ' />
       <h1 className='text-4xl md:text-[2.75rem] font-semibold mt-4'>Hello again</h1>
       <p className=' text-base md:text-[1.375rem] text-[#525458] mt-6 font-normal'>Tell me what’s on your mind, or pick a suggestion. I have limitations and won’t always get it right, but your feedback will help me improve.</p>

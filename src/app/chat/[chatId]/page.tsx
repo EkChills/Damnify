@@ -25,7 +25,7 @@ export default async function page({params}:{params:{chatId:string}}) {
   if(!dbUser) redirect('/auth-callback?origin=chat')
   return (
     <MaxWidthWrapper className='w-full lg:w-[calc(100%-26.375rem)] ml-auto mr-[73px] p-0 pb-6 h-[calc(100vh-4rem)] py-4  '>
-      <div className='w-full h-full pb-24 lg:pb-24 bg-[#F4F5FC] rounded-3xl p-6 relative overflow-y-scroll '>
+      <div className='w-full h-full pb-24 lg:pb-24 bg-[#F4F5FC] rounded-3xl p-6 relative overflow-y-scroll  scrollbar-thumb-gray-900 scrollbar-h-[32px] scrollbar-track-gray-100 scrollbar-thin'>
       <Messages chatId={params.chatId} imageUrl={user.picture!} />
       <ChatInputExisting chatId={params.chatId} />
       </div>

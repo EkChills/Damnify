@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation'
 export default function NewChatButton() {
 const queryClient = useQueryClient()
 const router = useRouter()
- const createChat = useMutation({
+const createChat = useMutation({
   mutationFn:async() => {
     const res = await axios.post('/api/createchat', {
       title:'New Chat'

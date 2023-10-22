@@ -44,6 +44,7 @@ export default function ChatInputExisting({chatId}:{chatId:string}) {
   const {mutate:sendChat, isPending} = useMutation({
     mutationFn:async() => {
       const res = await axios.post('/api/sendchat', {prompt:prompt, chatId:chatId})
+      setPrompt('')
       const data = await res.data
       return data
     },
@@ -66,7 +67,6 @@ export default function ChatInputExisting({chatId}:{chatId:string}) {
     },
     // Always refetch after error or success:
     onSettled: () => {
-      setPrompt('')
       queryClient.invalidateQueries({ queryKey: ['messages'] })
     },
     onSuccess:(data:{pushTo:string}) => {
@@ -82,6 +82,7 @@ export default function ChatInputExisting({chatId}:{chatId:string}) {
         className="m-0 w-full resize-none  py-[10px] pr-10  md:py-4 md:pr-12  pl-3 md:pl-4 overflow-y-hidden "
         onChange={(e) => setPrompt(e.target.value)}
         disabled={isPending}
+        value={prompt}
         autoFocus
         onKeyDown={(e) => {
           if(e.key === 'Enter') {
