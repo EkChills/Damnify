@@ -12,7 +12,8 @@ export async function GET() {
     const allChats = await db.chat.findMany({
       where:{
         userId:user.id as string
-      }
+      },
+      orderBy:{createdAt:'asc'}
     })
     return NextResponse.json(allChats)
   } catch (error) {
